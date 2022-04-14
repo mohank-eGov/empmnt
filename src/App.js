@@ -1,8 +1,8 @@
 import "./App.css";
-import CreateEmployee from "./components/CreateEmployee";
+import Employee from "./components/Employee";
 
 function App() {
-  return <CreateEmployee />;
+  return <Employee />;
 }
 
 export default App;

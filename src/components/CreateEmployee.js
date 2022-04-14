@@ -8,7 +8,7 @@ const schema = yup
   .object({
     name: yup.string().required(),
     email: yup.string().email().required(),
-    age: yup.number("Should be Number").positive().integer().required(),
+    age: yup.number("Should be Number").positive("").integer("").required(),
   })
   .required();
 
