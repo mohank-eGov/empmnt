@@ -1,7 +1,8 @@
 import "./App.css";
+import CreateEmployee from "./components/CreateEmployee";
 
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return <CreateEmployee />;
 }
 
 export default App;
