@@ -1,8 +1,8 @@
 import "./App.css";
-import Employee from "./components/Employee";
+import Routes from "./components/routes/Routes";
 
 function App() {
-  return <Employee />;
+  return <Routes />;
 }
 
 export default App;

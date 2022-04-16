@@ -1,14 +1,16 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useMutation, useQueryClient } from "react-query";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import Submitbutton from "./Buttons/SubmitButton";
 import Input from "./Input";
+import EMPLOYEE_SERVICE from "./service";
 const schema = yup
   .object({
     name: yup.string().required(),
     email: yup.string().email().required(),
-    age: yup.number("Should be Number").positive("").integer("").required(),
   })
   .required();
 
@@ -20,8 +22,18 @@ export default function CreateEmployee() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data) => {
+  const nav = useNavigate();
+
+  const queryClient = useQueryClient();
+  const CREATE = useMutation(EMPLOYEE_SERVICE.CREATE_EMPLOYEE, {
+    onSuccess: () => {
+      queryClient.invalidateQueries("employees");
+    },
+  });
+  const onSubmit = async (data) => {
     console.log(data);
+    await CREATE.mutate({ ...data });
+    nav("/");
   };
 
   return (
@@ -36,9 +48,9 @@ export default function CreateEmployee() {
         <Input type="text" label="Email" register={register} required />
         <p className="text-red-500 text-sm italic">{errors.email?.message}</p>
 
-        <Input type="number" label="Phone" register={register} required />
+        {/* <Input type="number" label="Phone" register={register} required />
         <Input label="Age" register={register} />
-        <p className="text-red-500 text-sm italic">{errors.age?.message}</p>
+        <p className="text-red-500 text-sm italic">{errors.age?.message}</p> */}
 
         <Submitbutton>Create</Submitbutton>
       </form>
