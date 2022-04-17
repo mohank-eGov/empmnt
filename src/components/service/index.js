@@ -8,9 +8,10 @@ const EMPLOYEE = (id) => axios.get(`${URL}/${id}`);
 
 const CREATE_EMPLOYEE = (employee) => axios.post(URL, employee);
 
-const UPDATE_EMPLOYEE = (employee, id) => axios.put(`${URL}/${id}`, employee);
+const UPDATE_EMPLOYEE = (employee) =>
+  axios.put(`${URL}/${employee.id}`, employee);
 
-const DELETE_EMPLOYEE = (id) => axios.delete(URL + "/" + id);
+const DELETE_EMPLOYEE = (id) => axios.delete(`${URL}/${id}`);
 
 const EMPLOYEE_SERVICE = {
   EMPLOYEE,

@@ -78,7 +78,10 @@ export default function Table() {
 
                         <td className="text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                           <div className="flex">
-                            <AiOutlineEdit className="text-3xl cursor-pointer" />
+                            <AiOutlineEdit
+                              className="text-3xl cursor-pointer"
+                              onClick={() => nav(`/update/${val.id}`)}
+                            />
                             <AiFillDelete
                               className="ml-4 text-3xl cursor-pointer"
                               onClick={() => DELETE.mutate(val.id)}
