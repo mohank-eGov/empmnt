@@ -21,11 +21,12 @@ const Form = ({ onSubmit, formValues }) => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  console.log(formValues);
   useEffect(() => {
     if (formValues) {
       setValue("name", formValues.name);
       setValue("email", formValues.email);
+      setValue("mobile", formValues.mobile);
+      setValue("age", formValues.age);
     }
   }, [formValues]);
   return (
@@ -40,9 +41,8 @@ const Form = ({ onSubmit, formValues }) => {
         <Input type="text" label="Email" register={register} required />
         <p className="text-red-500 text-sm italic">{errors.email?.message}</p>
 
-        {/* <Input type="number" label="Phone" register={register} required />
-      <Input label="Age" register={register} />
-      <p className="text-red-500 text-sm italic">{errors.age?.message}</p> */}
+        <Input type="text" label="Mobile" register={register} required />
+        <Input label="Age" register={register} />
 
         <Submitbutton>{formValues ? "Update" : "Create"}</Submitbutton>
       </form>

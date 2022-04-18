@@ -1,9 +1,10 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { useMutation, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
-import Form from "./Form";
+import Loading from "./Loading";
 import EMPLOYEE_SERVICE from "./service";
 
+const Form = lazy(() => import("./Form"));
 export default function CreateEmployee() {
   const nav = useNavigate();
 
@@ -19,5 +20,9 @@ export default function CreateEmployee() {
     nav("/");
   };
 
-  return <Form onSubmit={onSubmit} />;
+  return (
+    <Suspense fallback={<Loading />}>
+      <Form onSubmit={onSubmit} />;
+    </Suspense>
+  );
 }
