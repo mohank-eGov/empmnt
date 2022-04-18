@@ -1,5 +1,13 @@
 {
   "Employees": {
     "1": "Employees"
-  }
+  },
+  "Name": "Name",
+  "Email": "Email",
+  "Mobile": "Mobile",
+  "Age": "Age",
+  "Actions": "Actions",
+  "Create": "Create",
+  "Cancel": "Cancel",
+  "Update": "Update"
 }

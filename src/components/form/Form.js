@@ -1,7 +1,10 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
+import CancelButton from "./CancelButton";
 import Input from "./Input";
 import Submitbutton from "./SubmitButton";
 
@@ -12,6 +15,9 @@ const schema = yup
   })
   .required();
 const Form = ({ onSubmit, formValues }) => {
+  const nav = useNavigate();
+  const { t } = useTranslation();
+
   const {
     register,
     handleSubmit,
@@ -44,7 +50,10 @@ const Form = ({ onSubmit, formValues }) => {
         <Input type="text" label="Mobile" register={register} required />
         <Input label="Age" register={register} />
 
-        <Submitbutton>{formValues ? "Update" : "Create"}</Submitbutton>
+        <div className="flex">
+          <Submitbutton>{formValues ? t("Update") : t("Create")}</Submitbutton>
+          <CancelButton onClick={() => nav("/")}>{t("Cancel")}</CancelButton>
+        </div>
       </form>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { AiFillDelete, AiOutlineEdit } from "react-icons/ai";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +8,8 @@ import Loading from "./form/Loading";
 import EMPLOYEE_SERVICE from "./service";
 
 export default function Table() {
+  const { t } = useTranslation();
+
   const client = useQueryClient();
   const nav = useNavigate();
   const { data, isLoading } = useQuery("employees", EMPLOYEE_SERVICE.EMPLOYEES);
@@ -23,7 +26,7 @@ export default function Table() {
           nav("/create");
         }}
       >
-        Create
+        {t("Create")}
       </Button>
       <div className="flex flex-col">
         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -42,31 +45,31 @@ export default function Table() {
                       scope="col"
                       className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                     >
-                      name
+                      {t("Name")}
                     </th>
                     <th
                       scope="col"
                       className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                     >
-                      email
+                      {t("Email")}
                     </th>
                     <th
                       scope="col"
                       className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                     >
-                      mobile
+                      {t("Mobile")}
                     </th>
                     <th
                       scope="col"
                       className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                     >
-                      age
+                      {t("Age")}
                     </th>
                     <th
                       scope="col"
                       className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                     >
-                      Actions
+                      {t("Actions")}
                     </th>
                   </tr>
                 </thead>
