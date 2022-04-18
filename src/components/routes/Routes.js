@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import CreateEmployee from "../CreateEmployee";
-import Employee from "../Employee";
-import UpdateEmployee from "../UpdateEmployee";
+import CreateEmployee from "../../containers/employee/CreateEmployee";
+import Employee from "../../containers/employee/Employee";
+import UpdateEmployee from "../../containers/employee/UpdateEmployee";
 
 export default function RoutesL() {
   return (

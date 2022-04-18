@@ -2,8 +2,8 @@ import React from "react";
 import { AiFillDelete, AiOutlineEdit } from "react-icons/ai";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
-import Button from "./Buttons/Button";
-import Loading from "./Loading";
+import Button from "./form/Button";
+import Loading from "./form/Loading";
 import EMPLOYEE_SERVICE from "./service";
 
 export default function Table() {

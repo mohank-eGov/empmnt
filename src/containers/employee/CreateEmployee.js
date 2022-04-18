@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import { useMutation, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
-import Loading from "./Loading";
-import EMPLOYEE_SERVICE from "./service";
+import Loading from "../../components/form/Loading";
+import EMPLOYEE_SERVICE from "../../components/service";
 
-const Form = lazy(() => import("./Form"));
+const Form = lazy(() => import("../../components/form/Form"));
 export default function CreateEmployee() {
   const nav = useNavigate();
 

@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
-import Loading from "./Loading";
+import Loading from "../../components/form/Loading";
 
-const Table = lazy(() => import("./Table"));
+const Table = lazy(() => import("../../components/Table"));
 export default function Employee() {
   return (
     <div>

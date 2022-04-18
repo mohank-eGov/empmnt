@@ -2,8 +2,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import Submitbutton from "./Buttons/SubmitButton";
 import Input from "./Input";
+import Submitbutton from "./SubmitButton";
 
 const schema = yup
   .object({
