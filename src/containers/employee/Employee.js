@@ -30,6 +30,12 @@ export default function Employee() {
       >
         Telugu
       </button>
+      <button
+        className=" bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded m-1"
+        onClick={() => handleClick("ka")}
+      >
+        Kannada
+      </button>
       <h1 className="antialiased text-2xl	mx-8 mt-8">{t("Employees.1")}</h1> ​
       <Suspense fallback={<Loading loading={true} />}>
         <Table />
