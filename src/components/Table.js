@@ -5,6 +5,7 @@ import { useMutation, useQuery, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
 import Button from "./form/Button";
 import Loading from "./form/Loading";
+import TOAST from "./form/Toast";
 import EMPLOYEE_SERVICE from "./service";
 
 export default function Table() {
@@ -16,6 +17,10 @@ export default function Table() {
   const DELETE = useMutation(EMPLOYEE_SERVICE.DELETE_EMPLOYEE, {
     onSuccess: () => {
       client.invalidateQueries("employees");
+      TOAST.SUCESS("Employee Deleted");
+    },
+    onError: () => {
+      TOAST.ERROR("SomeThing Went Wrong");
     },
   });
   if (isLoading) <Loading loading={isLoading} />;
