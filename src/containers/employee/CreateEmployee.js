@@ -12,12 +12,12 @@ export default function CreateEmployee() {
   const CREATE = useMutation(EMPLOYEE_SERVICE.CREATE_EMPLOYEE, {
     onSuccess: () => {
       queryClient.invalidateQueries("employees");
+      nav("/");
     },
   });
   const onSubmit = async (data) => {
     console.log(data);
     await CREATE.mutate({ ...data });
-    nav("/");
   };
 
   return (

@@ -20,13 +20,13 @@ export default function UpdateEmployee() {
   const UPDATE = useMutation(EMPLOYEE_SERVICE.UPDATE_EMPLOYEE, {
     onSuccess: () => {
       queryClient.invalidateQueries("employees");
+      nav("/");
     },
   });
 
   const onSubmit = async (data) => {
     console.log(data, "ll");
     await UPDATE.mutate({ id, ...data });
-    nav("/");
   };
 
   if (isLoading) <Loading loading={isLoading} />;
