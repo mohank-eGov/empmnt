@@ -10,8 +10,16 @@ import Submitbutton from "./SubmitButton";
 
 const schema = yup
   .object({
-    name: yup.string().required(),
+    name: yup
+      .string()
+      .matches(/^[A-Za-z ]*$/, "Please enter valid name")
+      .max(40)
+      .required(),
     email: yup.string().email().required(),
+    mobile: yup
+      .string()
+      .matches(new RegExp("[0-9]{10}"), "Please enter valid Mobile Nmber"),
+    age: yup.number().required().positive().integer(),
   })
   .required();
 const Form = ({ onSubmit, formValues }) => {
@@ -42,13 +50,18 @@ const Form = ({ onSubmit, formValues }) => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <Input type="text" label="Name" register={register} required />
-        <p>{errors.name?.message}</p>
+        <p className="text-red-500 text-sm italic">{errors.name?.message}</p>
 
         <Input type="text" label="Email" register={register} required />
         <p className="text-red-500 text-sm italic">{errors.email?.message}</p>
 
         <Input type="text" label="Mobile" register={register} required />
+        <p className="text-red-500 text-sm italic">{errors.mobile?.message}</p>
+
         <Input label="Age" register={register} />
+        <p className="text-red-500 text-sm italic">
+          {errors.age?.message && "Should be Number"}
+        </p>
 
         <div className="flex">
           <Submitbutton>{formValues ? t("Update") : t("Create")}</Submitbutton>
