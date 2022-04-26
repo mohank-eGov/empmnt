@@ -58,7 +58,7 @@ export default function Table() {
         />
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col shadow-xl shadow-blue-300 mt-10 ml-10 mr-10 ">
         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
             <div className="overflow-hidden">

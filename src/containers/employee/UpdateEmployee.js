@@ -22,6 +22,7 @@ export default function UpdateEmployee() {
     onSuccess: () => {
       queryClient.invalidateQueries("employees");
       TOAST.SUCESS("Employee Updated");
+
       nav("/");
     },
     onError: () => {
@@ -29,8 +30,16 @@ export default function UpdateEmployee() {
     },
   });
 
-  const onSubmit = async (data) => {
-    await UPDATE.mutate({ id, ...data });
+  const onSubmit = async (formData) => {
+    console.log("department_i", formData);
+    await UPDATE.mutate({
+      id,
+      ...formData,
+      department_id:
+        formData.department_id == data?.data.department.department
+          ? data?.data.department.id
+          : formData.department_id.value,
+    });
   };
 
   if (isLoading) <Loading loading={isLoading} />;
@@ -41,7 +50,6 @@ export default function UpdateEmployee() {
         onSubmit={onSubmit}
         formValues={{
           ...data?.data,
-          department_id: data?.data?.department?.department,
         }}
       />
       ;
