@@ -6,8 +6,10 @@
   "Email": "ईमेल",
   "Mobile": "मोबाइल",
   "Age": "आयु",
+  "Department": "विभाग",
   "Actions": "कार्रवाई",
   "Create": "सृजन करना",
   "Cancel": "रद्द करें",
-  "Update": "अपडेट करें"
+  "Update": "अपडेट करें",
+  "Search": "खोज"
 }

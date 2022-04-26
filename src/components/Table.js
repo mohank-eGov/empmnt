@@ -54,6 +54,7 @@ export default function Table() {
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          placeholder={t("Search") + "......."}
         />
       </div>
 
@@ -93,6 +94,12 @@ export default function Table() {
                       className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                     >
                       {t("Age")}
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                    >
+                      {t("Department")}
                     </th>
                     <th
                       scope="col"
@@ -143,6 +150,9 @@ export default function Table() {
                           </td>
                           <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                             {val.age}
+                          </td>
+                          <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                            {val.department.department}
                           </td>
 
                           <td className="text-lg text-gray-900 font-light px-6 py-4 whitespace-nowrap">

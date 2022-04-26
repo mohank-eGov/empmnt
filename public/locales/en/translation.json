@@ -6,8 +6,10 @@
   "Email": "Email",
   "Mobile": "Mobile",
   "Age": "Age",
+  "Department": "Department",
   "Actions": "Actions",
   "Create": "Create",
   "Cancel": "Cancel",
-  "Update": "Update"
+  "Update": "Update",
+  "Search": "Search"
 }

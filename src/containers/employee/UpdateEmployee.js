@@ -37,7 +37,14 @@ export default function UpdateEmployee() {
   if (error) <h1>SomeThing Went Wrong!</h1>;
   return (
     <Suspense fallback={<Loading />}>
-      <Form onSubmit={onSubmit} formValues={{ ...data?.data }} />;
+      <Form
+        onSubmit={onSubmit}
+        formValues={{
+          ...data?.data,
+          department_id: data?.data?.department?.department,
+        }}
+      />
+      ;
     </Suspense>
   );
 }
