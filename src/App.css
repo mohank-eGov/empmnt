@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.pagination {
+  margin: 15px auto;
+  display: flex;
+  list-style: none;
+  outline: none;
+}
+.pagination > .active > a {
+  background-color: #6bb8fc;
+  border-color: #74b5eb;
+  color: #fff;
+}
+.pagination > li > a {
+  border: 1px solid #6abcf3;
+  padding: 10px 10px;
+  outline: none;
+  cursor: pointer;
+}

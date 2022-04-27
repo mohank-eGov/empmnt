@@ -37,7 +37,7 @@ const Form = ({ onSubmit, formValues }) => {
     resolver: yupResolver(schema),
     defaultValues: {
       department_id: formValues && {
-        value: formValues.department.id,
+        value: formValues.department_id,
         label: formValues.department.department,
       },
     },
