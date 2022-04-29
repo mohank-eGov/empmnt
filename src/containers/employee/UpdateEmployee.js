@@ -35,10 +35,7 @@ export default function UpdateEmployee() {
     await UPDATE.mutate({
       id,
       ...formData,
-      department_id:
-        formData.department_id == data?.data?.department?.department
-          ? data?.data.department.id
-          : formData.department_id.value,
+      department_id: formData.department_id.value,
     });
   };
 

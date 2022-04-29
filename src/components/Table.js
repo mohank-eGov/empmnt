@@ -15,7 +15,7 @@ export default function Table() {
   const [search, setSearch] = useState("");
   const [offset, setOffset] = useState(0);
   const [pageCount, setPageCount] = useState(0);
-  const [perpage] = useState(2);
+  const [perpage] = useState(3);
   const [user, setUser] = useState();
 
   const client = useQueryClient();

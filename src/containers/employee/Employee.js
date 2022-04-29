@@ -13,25 +13,28 @@ export default function Employee() {
   return (
     <div>
       <button
-        className="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded m-1"
+        className="bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded m-1 ml-10 mt-4"
         onClick={() => handleClick("en")}
       >
         English
       </button>
       <button
-        className=" bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded m-1"
+        className=" bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded 
+        m-1 mt-4"
         onClick={() => handleClick("hi")}
       >
         Hindi
       </button>
       <button
-        className=" bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded m-1"
+        className=" bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded 
+        m-1 mt-4"
         onClick={() => handleClick("tel")}
       >
         Telugu
       </button>
       <button
-        className=" bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded m-1"
+        className=" bg-transparent hover:bg-blue-500 text-blue-500 font-semibold hover:text-white py-1 px-2 border border-blue-500 hover:border-transparent rounded 
+        m-1 mt-4"
         onClick={() => handleClick("ka")}
       >
         Kannada
