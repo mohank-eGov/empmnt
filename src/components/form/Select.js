@@ -17,7 +17,7 @@ export default function Select({ label, control, required, type }) {
       data.data.map((val) => {
         setOptions((prev) => [
           ...prev,
-          { value: val.id, label: val.department },
+          { value: val.department_id, label: val.department },
         ]);
       });
     }

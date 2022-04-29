@@ -21,7 +21,7 @@ export default function CreateEmployee() {
     },
   });
   const onSubmit = async (data) => {
-    await CREATE.mutate({ ...data });
+    await CREATE.mutate({ ...data, department_id: data.department_id.value });
   };
 
   return (

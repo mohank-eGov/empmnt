@@ -37,6 +37,10 @@ export default function Table() {
     const selectedPage = (e.selected * perpage) % data?.data.length;
     setOffset(selectedPage);
   };
+  const serachEmployee = (e) => {
+    setSearch(e.target.value);
+    setPageCount(Math.ceil(data?.data.length / perpage));
+  };
   useEffect(() => {
     if (!isLoading && !error) {
       setPageCount(Math.ceil(data?.data.length / perpage));
@@ -71,7 +75,7 @@ export default function Table() {
         ml-3
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={serachEmployee}
           placeholder={t("Search") + "......."}
         />
       </div>

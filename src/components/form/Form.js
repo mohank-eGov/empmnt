@@ -38,7 +38,7 @@ const Form = ({ onSubmit, formValues }) => {
     defaultValues: {
       department_id: formValues && {
         value: formValues.department_id,
-        label: formValues.department.department,
+        label: formValues?.department?.department,
       },
     },
   });
